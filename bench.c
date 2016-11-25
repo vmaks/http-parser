@@ -22,7 +22,11 @@
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
+#ifndef _MSC_VER
 #include <sys/time.h>
+#else
+#include <Winsock2.h>
+#endif // !_MSC_VER
 
 static const char data[] =
     "POST /joyent/http-parser HTTP/1.1\r\n"
